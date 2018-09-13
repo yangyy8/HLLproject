@@ -5,8 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="../Css/Style.css">
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
 </head>
-<body>
-
+<body style="background-color: #020145">
+  <div class="wrapper">
+    <div class="wrapper-h">
+      <h4>"慧系列"大数据智能生态平台</h4>
+      <ul>
+        <li>
+          <a class="title active">OCR识别</a>
+        </li>
+        <li>
+          <a class="title">材料分类</a>
+        </li>
+        <li>
+          <a class="title">案情分析提取</a>
+        </li>
+        <li>
+          <a class="title">文书辅助生成</a>
+        </li>
+        <li>
+          <a class="title">全文检索</a>
+        </li>
+        <li>
+          <a class="title">小思助手</a>
+        </li>
+        <li>
+          <a class="title">数据库展示</a>
+        </li>
+        <li>
+          <a class="title">慧视可视化</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrapper-b">body</div>
+    <div class="wrapper-f">footer</div>
+  </div>
 </body>
+<script>
+  $('.title').on({
+    mouseover : function(){
+			$(this).addClass('active');
+		} ,
+    mouseout : function(){
+      $(this).removeClass('active');
+    }
+  })
+</script>
 </html>

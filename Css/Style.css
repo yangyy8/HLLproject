@@ -1,0 +1,45 @@
+html{height:100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:#fff}
+body{ font-family:"Microsoft YaHei","Hiragino Sans GB"  !important;-webkit-font-smoothing:antialiased; height:auto; margin:0px ; padding:0px;min-height:100%;position:relative; }
+a{ text-decoration:none !important;}
+input, textarea, keygen, select, button { font-family:"Microsoft YaHei","Hiragino Sans GB" !important;}
+ol,ul { font-family:"Microsoft YaHei","Hiragino Sans GB" ; list-style:none; margin:0px ; padding:0px }
+.wrapper{
+  padding: 0px 100px 10px 100px;
+  background-color: #020145;
+}
+.wrapper-h{
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper-h h4{
+  font-size: 20px!important;
+  /* float: left; */
+}
+.wrapper-h ul{
+  display: flex;
+  justify-content: space-between;
+  /* float: right; */
+}
+.active{
+  border-top: 7px solid #2a55b1;
+  color: #2a55b1;
+  box-sizing: border-box;
+  line-height: 65px!important;
+}
+.wrapper-h ul li{
+  height: 80px;
+  margin-left: 10px;
+}
+.wrapper-h ul li a{
+    height: 80px;
+    width: 100%;
+    line-height: 80px;
+    padding: 0px 10px;
+    text-align: center;
+    border-radius: 0px;
+    font-size: 20px;
+    display: block;
+    cursor: pointer;
+    font-weight: bold;
+}
