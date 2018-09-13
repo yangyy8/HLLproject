@@ -5,7 +5,7 @@ input, textarea, keygen, select, button { font-family:"Microsoft YaHei","Hiragin
 ol,ul { font-family:"Microsoft YaHei","Hiragino Sans GB" ; list-style:none; margin:0px ; padding:0px }
 .wrapper{
   padding: 0px 100px 10px 100px;
-  background: url(../image/logo.png) top left no-repeat;
+  background: url(../image/logo.png) top left no-repeat; min-height: 780px;
 }
 .wrapper-h{
   height: 80px;
@@ -45,3 +45,4 @@ ol,ul { font-family:"Microsoft YaHei","Hiragino Sans GB" ; list-style:none; marg
     box-sizing: border-box;
     color: #fff
 }
+.wrapper-b{background: #1F2059; min-height: 700px}
