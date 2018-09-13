@@ -1,11 +1,11 @@
 html{height:100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:#fff}
-body{ font-family:"Microsoft YaHei","Hiragino Sans GB"  !important;-webkit-font-smoothing:antialiased; height:auto; background: #020145;margin:0px ; padding:0px;min-height:100%;position:relative; }
+body{ font-family:"Microsoft YaHei","Hiragino Sans GB"  !important;-webkit-font-smoothing:antialiased; height:auto; background: #020145;margin:0px ; padding:0px;min-height:100%;position:relative;}
 a{ text-decoration:none !important;}
 input, textarea, keygen, select, button { font-family:"Microsoft YaHei","Hiragino Sans GB" !important;}
 ol,ul { font-family:"Microsoft YaHei","Hiragino Sans GB" ; list-style:none; margin:0px ; padding:0px }
 .wrapper{
   padding: 0px 100px 10px 100px;
-  background-color: #020145;
+  background: url(../image/logo.png) top left no-repeat;
 }
 .wrapper-h{
   height: 80px;
@@ -22,10 +22,10 @@ ol,ul { font-family:"Microsoft YaHei","Hiragino Sans GB" ; list-style:none; marg
   /* float: right; */
 }
 .active{
-  border-top: 7px solid #2a55b1;
-  color: #2a55b1;
+  border-top: 7px solid #4495FE;
+  color: #4495FE!important;
   box-sizing: border-box;
-  line-height: 65px!important;
+  line-height: 67px!important;
 }
 .wrapper-h ul li{
   height: 80px;
@@ -42,4 +42,6 @@ ol,ul { font-family:"Microsoft YaHei","Hiragino Sans GB" ; list-style:none; marg
     display: block;
     cursor: pointer;
     font-weight: bold;
+    box-sizing: border-box;
+    color: #fff
 }
