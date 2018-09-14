@@ -46,3 +46,83 @@ ol,ul { font-family:"Microsoft YaHei","Hiragino Sans GB" ; list-style:none; marg
     color: #fff
 }
 .wrapper-b{background: #1F2059; min-height: 700px}
+.b-search{
+  height: 130px;
+  background-color: #4C4D7A;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.b-search-content{
+  width: 70%;
+}
+.b-search-content .b-search-inp{
+  width:100%;
+}
+.b-search-content p{
+  margin: 5px 0px!important;
+}
+.b-search-inp .search-inp{
+  width:80%;
+  height: 35px;
+}
+.b-search-inp .search-search{
+  width: 90px;
+  height: 40px;
+  background-color: #169BD5;
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+}
+.b-search-inp .search-result{
+  width: 125px;
+  height: 40px;
+  background-color: #169BD5;
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+}
+.b-search-tab{
+  padding: 25px;
+}
+.btn{
+  width: 100px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: none;
+  box-sizing: border-box;
+  color: #000;
+}
+.btn-active{
+  background-color: #169BD5!important;
+  color: #fff;
+}
+.law{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.law-title h3{
+  display: inline-block;
+}
+.law-num{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  color: #fff;
+  line-height: 25px;
+  text-align: center;
+  background-color:#169BD5;
+}
+.law-content{
+  margin-left: 25px
+}
+.law-content p{
+  margin: 0!important;
+}
+.law-bot{
+  margin: 50px 0px 10px 0px;
+}
