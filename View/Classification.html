@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>材料分类</title>
   <link rel="stylesheet" href="../Css/Style.css">
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <link rel="stylesheet" href="../Css/yStyle.css">
+  <link rel="stylesheet" href="../ztree/zTreeStyle.css" type="text/css">
+  <script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+  <script type="text/javascript" src="../js/pdfobject.js"></script>
+  <script type="text/javascript" src="../ztree/jquery.ztree.all-3.5.min.js"></script>
+
+
 </head>
+
 <body>
   <div class="wrapper">
     <div class="wrapper-h">
@@ -39,32 +47,155 @@
         </li>
       </ul>
     </div>
-    <div class="wrapper-b">
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
+    <div class="wrapper-b" style="padding-top:10px;">
+      <div class="ymain">
+        <div class="ymainl">
+          <ul id="treeDemo" class="ztree"></ul>
+        </div>
+        <div class="ymainr">
+
+          <div id="pdfDiv" style="height: 660px;"></div>
+        </div>
+      </div>
     </div>
-    <div class="wrapper-f">footer</div>
+    <div class="wrapper-f"></div>
   </div>
 </body>
 <script>
   $('.title').on({
-    mouseover : function(){
-			$(this).addClass('active');
-		} ,
-    mouseout : function(){
+    mouseover: function() {
+      $(this).addClass('active');
+    },
+    mouseout: function() {
       $(this).removeClass('active');
       $('.mr').addClass('active');
     }
-  })
+  });
+
+  var setting = {
+    check: {
+      enable: true
+    },
+    data: {
+      simpleData: {
+        enable: true,
+        idKey: "id",
+        pIdKey: "pId",
+        rootPId: 0
+      }
+    },
+    view: {
+      dblClickExpand: false,
+      showLine: true,
+      selectedMulti: false
+    },
+    callback: {
+      onClick: zTreeOnClick,
+
+    }
+  };
+
+  //初始化树参数
+  var sett = {
+    check: {
+      enable: true
+    },
+    // edit: {
+    //            enable: true,
+    //            drag: {
+    //    			isCopy: false,
+    //    			isMove: true
+    //    		},
+    //            editNameSelectAll: true,
+    //            renameTitle:'重命名' ,
+    //            removeTitle: "删除"
+    //        },
+    data: {
+      simpleData: {
+        enable: true,
+        idKey: "id",
+        pIdKey: "pId",
+        rootPId: 0
+      }
+    },
+    callback: {
+      onClick: zTreeOnClick,
+      // onCheck:onCheck
+    },
+    view: {
+      showIcon: true
+
+    }
+  };
+
+  function onCheck(e, treeId, treeNode) {
+    var treeObj = $.fn.zTree.getZTreeObj("treeDemo"),
+      nodes = treeObj.getCheckedNodes(true),
+      v = "";
+    for (var i = 0; i < nodes.length; i++) {
+      v += nodes[i].name + ",";
+      console.log("节点id:" + nodes[i].id + "节点名称" + v); //获取选中节点的值
+    }
+  }
+
+  var zTreeNodes = [
+     {id: 1, pId: 0,name:"正卷",  open:true, children:[
+        {id: 101, pId: 1,name:"强制执行申请书"},
+        {id: 102, pId: 1,name:"申请人、被申请人、法定代表人身份材料"},
+        {id: 103, pId: 1,name:"授权委托等材料"},
+        {id: 104, pId: 1,name:"执行根据"},
+        {id: 105, pId: 1,name:"立案审批表、受理案件通知书"},
+        {id: 106, pId: 1,name:"证据材料"},
+        {id: 107, pId: 1,name:"裁定表"},
+        {id: 108, pId: 1,name:"各类法律文书送达回证"},
+        {id: 109, pId: 1,name:"其他材料（当事人送达地址确认书、邮件等材料）",open:true,children:[
+          {id: 1090, pId: 109,name:"立案申请材料"},
+          {id: 1091, pId: 109,name:"强制执行申请书"},
+          {id: 1092, pId: 109,name:"行政裁定书"},
+  ]},]},
+     {id:2, pId: 0,name:"副卷", open:true,children:[
+        {id: 201, pId: 2,name:"行政裁定书"},
+        {id: 202, pId: 2,name:"案件承办人的审查报告"},
+        {id: 203, pId: 2,name:"承办人与有关部门内部交换意见或笔录"},
+      ]}
+  ];
+  $(document).ready(function() {
+
+    //页面加载成功后,开始加载树形结构
+    $.fn.zTree.init($("#treeDemo"), sett, zTreeNodes);
+  });
+  var url = "test.pdf";
+
+  function zTreeOnClick(event, treeId, treeNode) {
+
+    var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+    var nodes = treeObj.getSelectedNodes();
+    for (var i = 0, l = nodes.length; i < l; i++) {
+      treeObj.checkNode(nodes[i], true, true);
+    }
+
+    if (url != null && url.indexOf(".pdf") > 0) {
+      var options = {
+        height: "100%",
+        pdfOpenParams: {
+          view: 'FitV',
+          page: '2'
+        }
+      };
+      PDFObject.embed('../pdf/' + url + "?random=" + Math.random(), "#pdfDiv", options);
+
+    } else if (url != null && url.indexOf(".doc") > 0) {
+      alert("请先转换文件格式");
+      return false;
+    }
+
+  }
 </script>
+<style type="text/css">
+  .ztree * {
+    font-size: 16px !important;
+    font-family: "微软雅黑";
+  }
+</style>
+
 </html>
