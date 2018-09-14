@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>OCR识别</title>
   <link rel="stylesheet" href="../Css/Style.css">
+  <link rel="stylesheet" href="../Css/OCR.css">
   <script type="text/javascript" src="../js/jquery.min.js"></script>
 </head>
 <body>
@@ -40,20 +41,69 @@
       </ul>
     </div>
     <div class="wrapper-b">
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
+      <div class="box1">
+        <label for="img_upload" class="upload-btn">
+          选择文件
+          <input type="file" id="img_upload" accept="image/*">
+        </label>
+        <div class="img_wrap"></div>
+        <p class="p1">或者将转换文件拖到这里</p>
+        <p class="p2">允许上传格式：png/jpg/pdf/bmp/gif</p>
+        <p class="p1">如果没有“按钮”刷新</p>
+        <label style="color:#99ccff">
+          <input type="checkbox">自动刷新
+        </label>
+      </div>
+      <div class="box2">
+        <div class="h1">转换结果选择：</div>
+        <div class="input-box1">
+          <label>
+            <input type="radio" name="res">可编辑复制PDF文档（保留格式）
+          </label>
+          <label>
+            <input type="radio" name="res">保留格式word文档（保留格式）
+          </label>
+          <label>
+            <input type="radio" name="res">文本文档txt（仅保留部分格式，不建议)
+          </label>
+        </div>
+        <div class="h1">识别语言组合:</div>
+        <div class="input-box2">
+          <label>
+            <input type="checkbox" name="lang">简体中文
+          </label>
+          <label>
+            <input type="checkbox" name="lang">英语
+          </label>
+          <label>
+            <input type="checkbox" name="lang">数字
+          </label>
+          <label>
+            <input type="checkbox" name="lang">日语
+          </label>
+          <label>
+            <input type="checkbox" name="lang">韩语
+          </label>
+          <label>
+            <input type="checkbox" name="lang">法语
+          </label>
+          <label>
+            <input type="checkbox" name="lang">俄语
+          </label>
+          <label>
+            <input type="checkbox" name="lang">西班牙语
+          </label>
+          <label>
+            <input type="checkbox" name="lang">德语
+          </label>
+        </div>
+        <div class="btn-box">
+          <button type="button" name="button">转换文件</button>
+        </div>
+      </div>
+
     </div>
-    <div class="wrapper-f">footer</div>
+    <div class="wrapper-f"></div>
   </div>
 </body>
 <script>
@@ -66,5 +116,26 @@
       $('.mr').addClass('active');
     }
   })
+  $('#img_upload').on('change',function(){
+    var file=$(this).prop("files")[0];
+    console.log(file)
+    if(!file.type.match('image.*')){
+      return false;
+    }
+  });
+  var box1 = document.querySelector('.box1');
+  box1.addEventListener('dragover',function(e){
+    e.stopPropagation();
+    e.preventDefault();
+  });
+  box1.addEventListener('drop',function(e){
+    e.stopPropagation();
+    e.preventDefault();
+    console.log(e)
+    var file =e.dataTransfer.flies;
+    if(!file.type.match('image.*')){
+      return false;
+    }
+  });
 </script>
 </html>

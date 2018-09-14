@@ -1,0 +1,119 @@
+.wrapper-b{
+  padding: 30px 45px;
+  box-sizing: border-box;
+}
+.btndiv{
+margin-bottom:35px;
+}
+.btndiv button{
+  border: none;
+  background: #169bd5;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 10px 25px;
+  margin-right: 8px;
+}
+.btndiv button:hover{
+  background: #f99;
+}
+#img_upload{
+  opacity: 0;
+  width: 0;
+}
+.upload-btn{
+  background: #169bd5;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bolder;
+  border-radius: 6px;
+  width: 300px;
+  padding: 6px 25px;
+  margin: 20px 0;
+  width: 100px;
+  text-align: center;
+}
+.form1{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #797979;
+  padding-bottom: 20px;
+}
+.fl1{
+  width: 800px;
+  margin-right: 10px;
+}
+.f1{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.t1{
+  width: 10%;
+  font-weight: bold;
+}
+.i1{
+  width: 88%;
+  padding: 0;
+  border: none;
+}
+.f1 input,.f1 select{
+  height: 30px;
+}
+.form2{
+  padding: 20px 0;
+  border-bottom: 1px solid #797979;
+
+}
+.f2{
+  margin-bottom: 10px;
+}
+.f2>div{
+  display: inline-block;
+  /* display: flex; */
+
+}
+.t2{
+  width: 80px;
+  font-weight: bold;
+}
+.i2>a{
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+  padding: 8px 15px;
+  margin-right: 8px;
+
+
+}
+.i2>a:hover{
+  font-weight: bold;
+  background: #169bd5;
+}
+.form3{
+  padding: 20px 0;
+}
+.ta{
+  width:100%;
+  border: none;
+  border-collapse:collapse;
+}
+.ta tr:first-child{
+  background: #56567e;
+  border: none
+}
+.ta tr{
+  border-bottom: 1px solid #56567e;
+
+}
+.ta td{
+  height: 35px;
+  text-align: center;
+}
+.ta tr td:first-child{
+  width: 20%;
+}
+.ta tr td:last-child{
+  width: 60%;
+}

@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>案情分析提取</title>
   <link rel="stylesheet" href="../Css/Style.css">
+  <link rel="stylesheet" href="../Css/ajfx.css">
+
   <script type="text/javascript" src="../js/jquery.min.js"></script>
 </head>
 <body>
@@ -40,20 +42,99 @@
       </ul>
     </div>
     <div class="wrapper-b">
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
-      body<br/>
+      <div class="btndiv">
+        <button type="button" name="button">案件标签维度计算</button>
+        <button type="button" name="button" style="background:#f99">提取</button>
+        <button type="button" name="button">法条推送</button>
+        <button type="button" name="button">量刑辅助</button>
+        <button type="button" name="button">类案推送</button>
+      </div>
+      <div class="form1">
+        <div class="fl1">
+          <div class="f1">
+            <div class="t1">案由</div>
+            <input class="i1" type="text" placeholder="交通肇事罪">
+          </div>
+          <div class="f1">
+            <div class="t1">文本内容</div>
+            <textarea class="i1" name="name" rows="6" placeholder="交通肇事罪"></textarea>
+          </div>
+          <div class="f1">
+            <div class="t1">行业选择</div>
+            <select class="i1" name="">
+              <option value="">法律行业</option>
+            </select>
+          </div>
+        </div>
+        <label for="img_upload" class="upload-btn">
+          上传文件
+          <input type="file" id="img_upload" accept="image/*">
+        </label>
+
+      </div>
+      <div class="form2">
+        <div class="f2">
+          <div class="t2">案由</div>
+          <div class="i2">
+            <a style="font-weight: bold;background: #169bd5;">书证</a>
+            <a>鉴定结论</a>
+            <a>证人证言</a>
+            <a>电子证据</a>
+            <a>物证</a>
+            <a>被害人陈述</a>
+            <a>被害人供述、辩解</a>
+            <a>侦察实验笔录</a>
+            <a>辨认、检查、勘探、侦察笔录</a>
+          </div>
+        </div>
+        <div class="f2">
+          <div class="t2">刑罚</div>
+          <div class="i2">
+            <a>有期徒刑</a>
+            <a>免于刑事处罚</a>
+            <a>电子证据</a>
+          </div>
+        </div>
+        <div class="f2">
+          <div class="t2">犯罪行为</div>
+          <div class="i2">
+            <a style="font-weight: bold;background: #169bd5;">交通肇事致人重伤、死亡</a>
+            <a>交通肇事致一人重伤，负重要或者全部责任</a>
+          </div>
+        </div>
+        <div class="f2">
+          <div class="t2">量刑情节</div>
+          <div class="i2">
+            <a>有其他特别恶劣情节</a>
+            <a>加重情节</a>
+            <a>从重情节</a>
+            <a>从轻情节</a>
+            <a>其他情节</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="form3">
+        <table class="ta">
+          <tr>
+            <td>借款人</td>
+            <td>债权人姓名</td>
+            <td>性别</td>
+          </tr>
+          <tr>
+            <td>张三</td>
+            <td>李四</td>
+            <td>男</td>
+          </tr>
+          <tr>
+            <td>张三</td>
+            <td>李四</td>
+            <td>男</td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <div class="wrapper-f">footer</div>
+    <div class="wrapper-f"></div>
   </div>
 </body>
 <script>
